@@ -10,6 +10,7 @@
   "author": "wuyang",
   "license": "ISC",
   "devDependencies": {
+    "@types/typescript": "^2.0.0",
     "gulp": "^3.9.1",
     "typescript": "^2.4.1"
   }
