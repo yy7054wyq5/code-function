@@ -7,3 +7,4 @@ function toNum(num) {
 	var c = a.replace(b,"$1");
 	return c;
 }
+document.write(toNum(1.21212));
