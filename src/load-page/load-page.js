@@ -91,6 +91,7 @@ var loadPage = function (currentPage, totalPage, count) {
 		'<div class="w-pager-jump">' +
 		'<input type=\"text\">' +
 		'<a>go</a></div>';
+	document.body.innerHTML = pageAction;
 	// if ( == 'zh') {
 	// 	pageAction = '<span  class=\" w-pager-txt \">共' + count + '条记录</span>' + '<span  class=\" w-pager-txt total\">第' + currentPage + '/' + totalPage + '页</span>' +
 	// 		'<ul class="w-pager-page"><li class=\"' + upClass + '\" ><a class=\" fa fa-angle-left \"></a></li>' + firstPage + pagesNum + lastPage + '' +
@@ -109,3 +110,5 @@ var loadPage = function (currentPage, totalPage, count) {
 
 	// $('div.w-pager').html(pageAction);
 };
+
+loadPage(1,10,20);
