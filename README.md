@@ -1,13 +1,6 @@
-## personalcode
-date:2016.3.30
+## code function
 
-## base code：
-* bootstrap-3.3.5.css
-* jQuery-1.11.2.js
-* js.cookie.js
-
-## PHPframe
-* laravel5.1
+some function use in work.
 
 ## note
 foo is callback
@@ -37,3 +30,7 @@ foo is callback
 
 ## scrolltopcontrol.js
 insert HTML
+
+
+## cmd
+* tsc: Compile ts file with tsconfig.json 
