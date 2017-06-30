@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <style>
+a{
+  margin: 0 10px;
+}
+.active{
+  color: red;
+}
+  </style>
+
+  <div id="page"></div>
+
+
+<script>
+
+  var pageCtrl = function(pageWrap, pageCount, callback) {
+    return new pageCtrl.prototype.init(pageWrap, pageCount, callback);
+  };
+
+  pageCtrl.prototype.init = function(pageWrap, pageCount, callback) {
+    this.pageCount = pageCount;
+    this.$page = $(pageWrap) || $('<div class="page-action"></div>'),
+    this.crtPage = 1;
+    this.maxCount = 5;
+    this.callback = callback || function (index) {};
+
+    return this;
+  };
+
+  pageCtrl.prototype.toPage = function(index) {
+    var start, end, i, tmp = '';
+
+    // 校正index;
+    index = parseInt(index);
+    if (index !== index || index < 1) this.crtPage = 1;
+    else if (index > this.pageCount) this.crtPage = this.pageCount;
+    else this.crtPage = index;
+
+    // 构建页码
+    start = Math.floor((this.crtPage - 1)/this.maxCount) * this.maxCount + 1;
+    end = Math.min(this.pageCount, start + this.maxCount - 1);
+
+    for (i = start; i <= end; i++) {
+      tmp += '<a href="javascript:;" data-page="'+i+'" class="'+ (i === this.crtPage ? 'active' : '') +'">'+ i +'</a>';
+    }
+
+    if (this.crtPage !== 1) tmp = '<a class="page-up" data-page="'+ (this.crtPage-1) +'" href="javscript:;">&lt;&nbsp;上一页</a>' + tmp;
+    if (this.crtPage !== this.pageCount) tmp += '<a class="page-down" data-page="'+ (this.crtPage+1) +'" href="javscript:;">下一页&nbsp;&gt;</a>';
+
+    this.$page.html(tmp);
+    this.callback && this.callback(this.crtPage);
+    return this;
+  };
+
+  pageCtrl.prototype.init.prototype = pageCtrl.prototype;
+
+
+  var pager = pageCtrl('#page', 23);
+
+  pager.toPage(7);
+
+  $('#page').on('click', 'a', function () {
+    var pageIndex = $(this).attr('data-page');
+    if (pageIndex && !$(this).hasClass('active')) pager.toPage(pageIndex);
+  });
+
+
+
+
+</script>
+
+
+</body>
+</html>
