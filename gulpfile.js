@@ -11,13 +11,13 @@ gulp.task('dev', ['less'], function () {
       baseDir: './'
     }
   });
-  gulp.watch(['src/**/*.less'], ['less-watch']);
+  gulp.watch(['src/**/*.less'], ['less']);
 });
 
-gulp.task('less-watch', ['less'], function (done) {
-    bs.reload();
-    done();
-});
+// gulp.task('less-watch', ['less'], function (done) {
+//     bs.reload();
+//     done();
+// });
 
 gulp.task('less', function () {
   return gulp.src('src/**/*.less')
@@ -28,4 +28,5 @@ gulp.task('less', function () {
     }))
     .pipe(concat('main.css'))
     .pipe(gulp.dest('dist'))
+    .pipe(browserSync.stream());
 });
