@@ -1,0 +1,261 @@
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+dl,
+dt,
+dd {
+  margin: 0;
+}
+input {
+  border: 0;
+}
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+.fixed {
+  position: fixed;
+  z-index: 999;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.Zindex1 {
+  z-index: 1;
+}
+.Zindex2 {
+  z-index: 2;
+}
+.Zindex3 {
+  z-index: 3;
+}
+.Zindex4 {
+  z-index: 4;
+}
+.Zindex5 {
+  z-index: 5;
+}
+.Zindex6 {
+  z-index: 6;
+}
+.Zindex7 {
+  z-index: 7;
+}
+.Zindex8 {
+  z-index: 8;
+}
+.Zindex9 {
+  z-index: 9;
+}
+.line-ellipsis {
+  /*单行省略号*/
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*提示框*/
+.alert-tips {
+  position: fixed;
+  width: 382px;
+  height: 228px;
+  clear: both;
+  background: #fff;
+  font-size: 18px;
+  -webkit-box-shadow: 0px 0px 15px #888888;
+  box-shadow: 0px 0px 15px #888888;
+  z-index: 999999;
+  /* For IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color='#888888')";
+  /* For IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color='#888888');
+  display: none;
+}
+.alert-tips div {
+  width: 100%;
+}
+.alert-tips div.tips {
+  float: left;
+  width: 334px;
+  height: 48px;
+  background: #f6f6f6;
+  color: #333333;
+  line-height: 48px;
+  text-indent: 20px;
+}
+.alert-tips div.closeBtn {
+  float: left;
+  width: 48px;
+  height: 48px;
+  background: url(../img/close.png) no-repeat center;
+  background-color: #f6f6f6;
+  color: #a4a4a4;
+  font-size: 18px;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+}
+.alert-tips .tips-con {
+  vertical-align: middle;
+  width: 367px;
+  height: 116px;
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 40px;
+  padding-right: 35px;
+  text-align: center;
+}
+.alert-tips .tips-con a {
+  color: #3c9cff;
+}
+.alert-tips .detail-btn {
+  background: #ff6100;
+  padding: 10px 30px;
+  font-size: 16px;
+  margin-left: 50px;
+  color: #fff;
+}
+.alert-tips .detail-btn .alert-tips a.detail-btn#cancel {
+  background: #a4a4a4;
+}
+.alert-tips .detail-btn .alert-tips a.detail-btn:visited {
+  color: #fff;
+}
+.little-tips {
+  position: fixed;
+  z-index: 999999;
+  background: url(../img/brand-bg.png);
+  display: block;
+  color: #fff;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.send {
+  display: block;
+  border: 1px solid #dbdbdb;
+  height: 38px;
+  width: 100px;
+  line-height: 38px;
+  text-align: center;
+  background: #f5f5f5;
+  cursor: pointer;
+  margin-left: 10px;
+  color: #09091a;
+  font-size: 12px;
+  color: #707070;
+  font-family: Arial, Verdana, "\5b8b\4f53";
+}
+.send:hover {
+  color: #fe601a;
+}
+.send.wait {
+  background-color: #ccc;
+  color: #fff;
+  cursor: inherit;
+}
+
+/*翻页*/
+.page-action {
+  width: 650px;
+  height: 37px;
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+.page-action a,
+.page-action span {
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: #fbe7db;
+  border: solid 1px #e07729;
+  color: #ff6000;
+  margin-left: 5px;
+}
+.page-action a .page-up.nopage,
+.page-action a .page-down.nopage {
+  display: none;
+}
+.page-action a:hover {
+  background: #fff;
+}
+.page-action a.active {
+  background: #fff;
+}
+.page-action input {
+  display: block;
+  text-align: center;
+  float: left;
+  border: solid 1px #e07729;
+  width: 30px;
+  padding: 3px 0 3px 0;
+  line-height: 22px;
+  padding-top: 2px;
+  *height: 22px;
+  margin-left: 5px;
+}
+.page-action a.btn {
+  background: #e6e6e6;
+  border-radius: 0;
+}
+.page-action a.btn:hover {
+  background: #fff;
+  color: #ff6000;
+}
+.page-action span {
+  border: 0;
+  background: transparent;
+  line-height: 30px;
+  padding: 0;
+}
+/*白色翻页*/
+.page-action.white a {
+  background: #fff;
+  color: #7d7d7d;
+  border: solid 1px #c2c2c2;
+  border-radius: 3px;
+}
+.page-action.white a .page-up.nopage,
+.page-action.white a .page-down.nopage {
+  display: none;
+}
+.page-action.white a:hover,
+.page-action.white a.active {
+  color: #ff6e00;
+  background: #fff;
+  border: 1px solid #ff6e00;
+}
+.page-action.white input {
+  border: solid 1px #c2c2c2;
+}
+.page-action.white a.btn {
+  border-radius: 0;
+  background: #fff;
+}
+.page-action.white a.btn:hover {
+  border: solid 1px #c2c2c2;
+  background-color: #e6e6e6;
+}
+.page-action.white span {
+  color: #7d7d7d;
+}
