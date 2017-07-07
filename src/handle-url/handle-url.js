@@ -8,76 +8,76 @@
 *insertCookies(URL)将url存入cookie
 */
 var handleURL = {
-    set:function (key,value,href) {
-        var URL;
-        if(href==undefined){
-            href = location.href;
-        }
-        var index = href.indexOf('?');
-        if(index<0){//url没有参数
-            URL = href + '?'+key+'='+value;
-        }
-        else{//url已有参数
-            var keyIndex = href.indexOf(key);
-            if(keyIndex<0){//url没有该参数
-                URL = href +'&'+key+'='+value;
-            }
-            else if(keyIndex>0){//url有该参数
-                var a = href.substring(0,keyIndex);
-                var b = href.substring(keyIndex,href.length);
-                if(b.indexOf('&')<0){//该参数在最后
-                    b = b.substring(0,b.indexOf('=')+1) + value;
-                    URL = a + b;
-                }
-                else{//该参数不在最后
-                    var c = b.substring(b.indexOf('&'),b.length);
-                    b = b.substring(0,b.indexOf('=')+1) + value;
-                    URL = a + b + c;
-                }
-            }
-        }
-        return URL;
-    },
-    getParam:function () {
-        var Href = location.href;
-        var index = Href.indexOf('?');
-        var param = Href.substr(index+1,Href.length);
-        return param;
-    },
-    markValue:function (key) {
-        var Href = location.href;
-        var index = Href.indexOf(key);
-        if(index<0){
-            return undefined;
-        }
-        else{
-            var a = Href.substring(index,Href.length);
-            var aindex = a.indexOf('&');
-            if(aindex<0){
-                var b = a.substring(key.length+1,a.length);
-            }
-            else{
-                var b = a.substring(key.length+1,aindex);
-            }
-        }
-        return b;
-    },
-    insertCookies:function (URL) {
-        Cookies.set('url',URL,{expires:1});
-    },
-    jump:function (key,value,href) {
-        var newURL;
-        if(href==undefined){
-            href = location.href;
-        }
-        if(key=='page'){
-            newURL = handleURL.set(key,value,href);
-        }
-        else{
-            newURL = handleURL.set(key,value,handleURL.set('page',1,href));
-        }
-        handleURL.insertCookies(newURL);
-        location.href = newURL;
-    }
+	set: function (key, value, href) {
+		var URL;
+		if (href == undefined) {
+			href = location.href;
+		}
+		var index = href.indexOf('?');
+		if (index < 0) {//url没有参数
+			URL = href + '?' + key + '=' + value;
+		}
+		else {//url已有参数
+			var keyIndex = href.indexOf(key);
+			if (keyIndex < 0) {//url没有该参数
+				URL = href + '&' + key + '=' + value;
+			}
+			else if (keyIndex > 0) {//url有该参数
+				var a = href.substring(0, keyIndex);
+				var b = href.substring(keyIndex, href.length);
+				if (b.indexOf('&') < 0) {//该参数在最后
+					b = b.substring(0, b.indexOf('=') + 1) + value;
+					URL = a + b;
+				}
+				else {//该参数不在最后
+					var c = b.substring(b.indexOf('&'), b.length);
+					b = b.substring(0, b.indexOf('=') + 1) + value;
+					URL = a + b + c;
+				}
+			}
+		}
+		return URL;
+	},
+	getParam: function () {
+		var Href = location.href;
+		var index = Href.indexOf('?');
+		var param = Href.substr(index + 1, Href.length);
+		return param;
+	},
+	markValue: function (key) {
+		var Href = location.href;
+		var index = Href.indexOf(key);
+		if (index < 0) {
+			return undefined;
+		}
+		else {
+			var a = Href.substring(index, Href.length);
+			var aindex = a.indexOf('&');
+			if (aindex < 0) {
+				var b = a.substring(key.length + 1, a.length);
+			}
+			else {
+				var b = a.substring(key.length + 1, aindex);
+			}
+		}
+		return b;
+	},
+	insertCookies: function (URL) {
+		Cookies.set('url', URL, { expires: 1 });
+	},
+	jump: function (key, value, href) {
+		var newURL;
+		if (href == undefined) {
+			href = location.href;
+		}
+		if (key == 'page') {
+			newURL = handleURL.set(key, value, href);
+		}
+		else {
+			newURL = handleURL.set(key, value, handleURL.set('page', 1, href));
+		}
+		handleURL.insertCookies(newURL);
+		location.href = newURL;
+	}
 };
 

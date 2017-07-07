@@ -4,6 +4,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var bs = require('browser-sync').create();
+var ts = require('typescript');
 
 gulp.task('dev', ['less'], function () {
   bs.init({
@@ -11,13 +12,10 @@ gulp.task('dev', ['less'], function () {
       baseDir: './'
     }
   });
-  gulp.watch(['src/**/*.less'], ['less']);
-});
 
-// gulp.task('less-watch', ['less'], function (done) {
-//     bs.reload();
-//     done();
-// });
+  gulp.watch(['src/**/*.less'], ['less']);
+  gulp.watch('index.html').on('change', bs.reload);
+});
 
 gulp.task('less', function () {
   return gulp.src('src/**/*.less')
@@ -28,5 +26,5 @@ gulp.task('less', function () {
     }))
     .pipe(concat('main.css'))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.stream());
+    .pipe(bs.stream());
 });
