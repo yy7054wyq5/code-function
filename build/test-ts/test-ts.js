@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var load_page_1 = require("./../load-page/load-page");
+console.log(load_page_1.Point);
+var point = new load_page_1.Point(1, 2);
+console.log(point);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGVzdC10cy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy90ZXN0LXRzL3Rlc3QtdHMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxzREFBaUQ7QUFFakQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxpQkFBSyxDQUFDLENBQUM7QUFFbkIsSUFBSSxLQUFLLEdBQUcsSUFBSSxpQkFBSyxDQUFDLENBQUMsRUFBQyxDQUFDLENBQUMsQ0FBQztBQUMzQixPQUFPLENBQUMsR0FBRyxDQUFDLEtBQUssQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUG9pbnQgfSBmcm9tICcuLy4uL2xvYWQtcGFnZS9sb2FkLXBhZ2UnO1xyXG5cclxuY29uc29sZS5sb2coUG9pbnQpO1xyXG5cclxubGV0IHBvaW50ID0gbmV3IFBvaW50KDEsMik7XHJcbmNvbnNvbGUubG9nKHBvaW50KTsiXX0=
